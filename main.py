@@ -28,10 +28,13 @@ def h_registration2():
         box = pyautogui.locateCenterOnScreen('Image\Box.jpg', confidence=0.8, grayscale=False)
         pyautogui.moveTo(box.x, box.y, r, pyautogui.easeOutQuad)
         pyautogui.click()
-        feeding = pyautogui.locateCenterOnScreen('Image\Feed.jpg', confidence=0.9)
-        if(box == None and feeding == None):
+        time.sleep(1.0)
+        pd = pyautogui.locateCenterOnScreen('Image\PD.jpg', confidence=0.9)
+        print(pd)
+        if(pd == None):
             print("Wystąpił błąd rejestrowania")
             pyautogui.press('f5')
+            time.sleep(2.0)
             h_registration2()
         else:
             pass
@@ -146,16 +149,21 @@ def h_sleep():
 def h_next():
     n_horse = pyautogui.locateCenterOnScreen('Image\Arrow.jpg', confidence=0.9)
     n_horse2 = pyautogui.locateCenterOnScreen('Image\Arrow2.jpg', confidence=0.9)
+    n_horse3 = pyautogui.locateCenterOnScreen('Image\Arrow3.jpg', confidence=0.9)
     if(n_horse != None):
         pyautogui.moveTo(n_horse.x, n_horse.y, r, pyautogui.easeOutQuad)
         pyautogui.click()
     elif (n_horse2 != None):
         pyautogui.moveTo(n_horse2.x, n_horse2.y, r, pyautogui.easeOutQuad)
         pyautogui.click()
+    elif (n_horse3 != None):
+        pyautogui.moveTo(n_horse3.x, n_horse3.y, r, pyautogui.easeOutQuad)
+        pyautogui.click()
     else:
         print("Wystąpił błąd z przechodzeniem do następnego konia")
         pyautogui.press('f5')
-        h_next()
+        time.sleep(1.5)
+        pyautogui.click()
 
 print("Wpisz liczbę koni do oporządzenia:")
 n = int(input())
@@ -163,12 +171,13 @@ print("Czy posiadasz vipa?\n 1-Tak\n 2-Nie")
 v = int(input())
 print("Zacznę oporządzać konie za 15 sekund.")
 time.sleep(15)
-duration = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8,]
+duration = [0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8,]
 for x in range(n):
     #randomizacja czasu trwania przesunięcia myszki
     random.seed(a=None, version=2)
     r = random.choice(duration)
     for y in range(2):
+        time.sleep(0.1)
         #zwykłe oporządzenie
         h_registration()
         h_feed()
