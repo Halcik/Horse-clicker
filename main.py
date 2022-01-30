@@ -5,8 +5,8 @@ import pyautogui
 import time
 import random
 
-#Przerwa po kazdym wywolaniu pyautogui - tu 0,5 sekundy
-pyautogui.PAUSE = 0.5
+#Przerwa po kazdym wywolaniu pyautogui - tu 0,3 sekundy
+pyautogui.PAUSE = 0.3
 
 # Zarejestrowanie w osrodku
 def h_registration():
@@ -165,13 +165,25 @@ def h_next():
         time.sleep(1.5)
         pyautogui.click()
 
+# Jesli kon umarl
+def death():
+    death = pyautogui.locateCenterOnScreen('Image\death.jpg', confidence=0.9)
+    if(death != None):
+        pyautogui.moveTo(death.x, death.y, r, pyautogui.easeOutQuad)
+        pyautogui.click()
+        h_arrow = pyautogui.locateCenterOnScreen('Image\Arrowb.jpg', confidence=0.9)
+        pyautogui.moveTo(h_arrow.x, h_arrow.y, r, pyautogui.easeOutQuad)
+        pyautogui.click()
+    else:
+        return 
+
 print("Wpisz liczbę koni do oporządzenia:")
 n = int(input())
 print("Czy posiadasz vipa?\n 1-Tak\n 2-Nie")
 v = int(input())
 print("Zacznę oporządzać konie za 15 sekund.")
 time.sleep(15)
-duration = [0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8,]
+duration = [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.45, 0.5]
 for x in range(n):
     #randomizacja czasu trwania przesunięcia myszki
     random.seed(a=None, version=2)
@@ -183,6 +195,6 @@ for x in range(n):
         h_feed()
         h_groom()
         h_sleep()
+        death()
     print("Postęp:", x+1, "/", n)
     h_next()
-    
