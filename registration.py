@@ -22,13 +22,13 @@ def h_registration2(r):
         box = pyautogui.locateCenterOnScreen('Image\Box.jpg', confidence=0.8, grayscale=False)
         pyautogui.moveTo(box.x, box.y, r, pyautogui.easeOutQuad)
         pyautogui.click()
-        time.sleep(1.5)
+        time.sleep(2)
         pd = pyautogui.locateCenterOnScreen('Image\PD.jpg', confidence=0.9)
         if(pd == None):
             print("Wystąpił błąd rejestrowania")
             pyautogui.press('f5')
             time.sleep(2.0)
-            h_registration2()
+            h_registration2( r)
         else:
             pass
     else:

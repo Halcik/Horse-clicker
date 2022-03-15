@@ -7,7 +7,7 @@ def h_feed( r, v):
     care = pyautogui.locateCenterOnScreen('Image\Care.jpg', confidence=0.9)
     if (feeding != None):
         pyautogui.moveTo(feeding.x, feeding.y, r, pyautogui.easeOutQuad)
-        print(feeding.x, feeding.y)
+        #print(feeding.x, feeding.y)
         pyautogui.click()
     elif (care != None):
         pyautogui.moveTo(care.x, care.y, r, pyautogui.easeOutQuad)
@@ -17,7 +17,7 @@ def h_feed( r, v):
     
     if (v != 1 and care == None):
         Feed14 = pyautogui.locateCenterOnScreen('Image\Feed14.jpg', confidence=0.9)
-        print("14: ", Feed14)
+        #print("14: ", Feed14)
 
         Feed12 = pyautogui.locateCenterOnScreen('Image\Feed12.jpg', confidence=0.9)
         #print("12: ", Feed12)
