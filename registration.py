@@ -22,7 +22,7 @@ def h_registration2(r):
         box = pyautogui.locateCenterOnScreen('Image\Box.jpg', confidence=0.8, grayscale=False)
         pyautogui.moveTo(box.x, box.y, r, pyautogui.easeOutQuad)
         pyautogui.click()
-        time.sleep(2)
+        time.sleep(3)
         pd = pyautogui.locateCenterOnScreen('Image\PD.jpg', confidence=0.9)
         if(pd == None):
             print("Wystąpił błąd rejestrowania")
@@ -36,6 +36,7 @@ def h_registration2(r):
         if(r_days != None):
             pyautogui.moveTo(r_days.x, r_days.y, r, pyautogui.easeOutQuad)
             pyautogui.click()
+            time.sleep(3)
             r_price = pyautogui.locateCenterOnScreen('Image\Price.jpg', confidence=0.9, grayscale=False)
             pyautogui.moveTo(r_price.x, r_price.y, r, pyautogui.easeOutQuad)
             pyautogui.click()

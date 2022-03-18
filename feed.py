@@ -22,7 +22,7 @@ def h_feed( r, v):
         Feed12 = pyautogui.locateCenterOnScreen('Image\Feed12.jpg', confidence=0.9)
         #print("12: ", Feed12)
 
-        Feed10 = pyautogui.locateCenterOnScreen('Image\Feed10.jpg', confidence=0.93)
+        Feed10 = pyautogui.locateCenterOnScreen('Image\Feed10.jpg', confidence=0.9)
         #print("10: ", Feed10)
 
         Feed8 = pyautogui.locateCenterOnScreen('Image\Feed8.jpg', confidence=0.9)
@@ -43,13 +43,11 @@ def h_feed( r, v):
         Feed4 = pyautogui.locateCenterOnScreen('Image\Feed4.jpg', confidence=0.9)
         #print("4: ", Feed4)
 
-        if(Feed20 != None):
-            pyautogui.move(196, 172, r, pyautogui.easeOutQuad)
-        elif(Feed0 != None):
+        if(Feed0 != None):
             quantity = pyautogui.locateCenterOnScreen('Image\quantity0.jpg', confidence=0.9)
             pyautogui.moveTo(quantity.x, quantity.y, r, pyautogui.easeOutQuad)
-            pyautogui.click()
-            return
+        elif(Feed20 != None):
+            pyautogui.move(196, 172, r, pyautogui.easeOutQuad)
         elif(Feed12 != None):
             pyautogui.move(107, 88 , r, pyautogui.easeOutQuad)
         elif(Feed10 != None):
@@ -64,12 +62,8 @@ def h_feed( r, v):
             pyautogui.move(42, 88, r, pyautogui.easeOutQuad)
         elif(Feed16 != None):
             pyautogui.move(152, 88, r, pyautogui.easeOutQuad)
-        else:
-            pass
         
         pyautogui.click()
-    else:
-        pass
 
     feed_it = pyautogui.locateCenterOnScreen('Image\Feeding.jpg', confidence=0.8)
     if(feed_it != None):
