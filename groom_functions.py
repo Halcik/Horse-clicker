@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
-import pyautogui
-from types import NoneType
-import time
+import pyautogui as pg
 
 #Oporządzenie
 def h_groom( r):
-    groom = pyautogui.locateCenterOnScreen('Image\Groom.jpg', confidence=0.9)
+    groom = pg.locateCenterOnScreen('Image\Groom.jpg', confidence=0.9)
+
     if(groom != None):
-        pyautogui.moveTo(groom.x, groom.y, r, pyautogui.easeOutQuad)
-        pyautogui.click()
-    else:
-        return
+        pg.moveTo(groom.x, groom.y, r, pg.easeOutQuad)
+        pg.click()
+
 
 # Polozenie spac
 def h_sleep( r):
-    sleep_horse = pyautogui.locateCenterOnScreen('Image\Sleep.jpg', confidence=0.8)
+    sleep_horse = pg.locateCenterOnScreen('Image\Sleep.jpg', confidence=0.8)
+
     if(sleep_horse != None):
-        pyautogui.moveTo(sleep_horse.x, sleep_horse.y, r, pyautogui.easeOutQuad)
-        pyautogui.click()
-    else:
-        return
+        pg.moveTo(sleep_horse.x, sleep_horse.y, r, pg.easeOutQuad)
+        pg.click()

@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
-import pyautogui
-from types import NoneType
-import time
+import pyautogui as pg
 
 def death( r):
-    death = pyautogui.locateCenterOnScreen('Image\death.jpg', confidence=0.9)
+    death = pg.locateCenterOnScreen('Image\death.jpg', confidence=0.9)
+
     if(death != None):
-        pyautogui.moveTo(death.x, death.y, r, pyautogui.easeOutQuad)
-        pyautogui.click()
-        h_arrow = pyautogui.locateCenterOnScreen('Image\Arrowb.jpg', confidence=0.9)
-        pyautogui.moveTo(h_arrow.x, h_arrow.y, r, pyautogui.easeOutQuad)
-        pyautogui.click()
-    else:
-        return 
+        pg.moveTo(death.x, death.y, r, pg.easeOutQuad)
+        pg.click()
+        h_arrow = pg.locateCenterOnScreen('Image\Arrowb.jpg', confidence=0.9)
+        pg.moveTo(h_arrow.x, h_arrow.y, r, pg.easeOutQuad)
+        pg.click()
