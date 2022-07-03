@@ -21,7 +21,7 @@ Biblioteki użyte w programie:
  Program ma przede wszystkim za zadanie wykonać kilka podstawowych czynności związanych z zajmowaniem się końmi.
  Są to kolejno: rejestracja do ośrodka, nakarmienie, oporządzenie, położenie spać oraz przejście do następnego konia.
  
- Każda z funkcji ma za zadanie rozpoznać, czy na stronie, którą mamy otworzoną, znajduje się obrazek przedstawiający jedną z zadań, którą ma wykonać program. Przykładowo może znaleźć, czy koń został nakarmiony. Jeśli nie jest nakarmiony, clicker go nakarmi, jak jest, to przejdzie do dalszych czynności.
+ Każda z funkcji ma za zadanie rozpoznać, czy na stronie, którą mamy otworzoną, znajduje się obrazek przedstawiający jedno z zadań, którą ma wykonać program. Przykładowo może znaleźć, czy koń został nakarmiony. Jeśli nie jest nakarmiony, clicker go nakarmi, jak jest, to przejdzie do dalszych czynności.
  
  Oprócz podstawowych funkcji wymienionych wyżej, Horse clicker może wrócić do oporządzania po śmierci jednego z koni. Oprócz tego na początku można wybrać parę opcji, które odpowiadają za to, jak program ma dokładnie działać - są to: ilość koni do oporządzenia, posiadanie konta VIP - jest to uprzywilejowane konto w tej grze - oraz czy chcemy, by konie były kładzone spać (jest to związane z tym, że niektórzy gracze posiadają specjalnego konia, który kładzie spać konie po oporządzeniu go, wtedy funkcja sleep nie jest już potrzebna.
  
