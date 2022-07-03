@@ -8,13 +8,13 @@ from groom_functions import h_groom, h_sleep
 from next_horse import h_next
 from death import death
 
+import os
+
 #Przerwa po kazdym wywolaniu pyautogui - tu 0,3 sekundy
 pg.PAUSE = 0.3
 
-print("Wpisz liczbę koni do oporządzenia:")
-n = int(input())
-print("Czy posiadasz vipa?\n 1-Tak\n 2-Nie")
-v = int(input())
+n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
+v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
 func_sleep = input("Czy mam kłaść spać? [y/n]\n")
 print("Zaczynam")
 #print("Zacznę oporządzać konie za 10 sekund.")
@@ -35,3 +35,4 @@ for i in range(n):
         death( r)
     print("Postęp:", i+1, "/", n)
     h_next( r)
+#os.system('shutdown /s') #wyłącza kompa
