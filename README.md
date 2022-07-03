@@ -1,11 +1,11 @@
 # Horse clicker
 Jest to projekt, który został stworzony, aby zaoszczędzić trochę czasu na nudnych czynnościach wykonywanych w grze howrse. Polega on na podstawowej opiece nad końmi, wykorzystując do tego rozpoznawanie elementów na ekranie.
 ## Spis treści
-1. Technologie
-2. Funkcje programu
-3. Przykład działania programu
-4. Czym jest howrse
-5. Plany na rozwój projektu
+1. Technologie.
+2. Funkcje programu.
+3. Przykład działania programu.
+4. Czym jest howrse?
+5. Plany na rozwój projektu.
 
 ## 1. Technologie.
 Język programowania użyty w programie:
