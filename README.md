@@ -41,6 +41,6 @@ Biblioteki użyte w programie:
   - dodanie opcji wyłączenia komputera
   - dodanie opcji pokrycia klaczy 
   - udoskonalanie karmienia bez specjalnego konta VIP
-  - stworzenie strony działającej tylko na lokalnym komputerze, która ułatwiłaby obsługę programu (flask + formularze). Miałoby to na celu ułatwienie wybierania początkowej konfiguracji w programie.
+  - stworzenie strony działającej tylko na lokalnym komputerze, która ułatwiłaby obsługę programu (planowane połączenie flaska i formularzy). Służyłoby to do wybierania początkowej konfiguracji w programie.
  
  
