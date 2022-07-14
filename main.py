@@ -19,11 +19,10 @@ func_sleep = input("Czy mam kłaść spać? [y/n]\n")
 print("Zaczynam")
 #print("Zacznę oporządzać konie za 10 sekund.")
 #time.sleep(10)
-duration = [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.45, 0.5]
 for i in range(n):
     #randomizacja czasu trwania przesunięcia myszki
     random.seed(a=None, version=2)
-    r = random.choice(duration)
+    r = random.uniform(0.1, 0.5)
     for j in range(2):
         time.sleep(1)
         #zwykłe oporządzenie
