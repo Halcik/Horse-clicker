@@ -4,7 +4,7 @@ import pyautogui as pg
 def death( r):
     death = pg.locateCenterOnScreen('Image\death.jpg', confidence=0.9)
 
-    if(death != None):
+    if death:
         pg.moveTo(death.x, death.y, r, pg.easeOutQuad)
         pg.click()
         h_arrow = pg.locateCenterOnScreen('Image\Arrowb.jpg', confidence=0.9)
