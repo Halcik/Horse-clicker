@@ -93,6 +93,8 @@ def h_feed( r, v):
                                             print("16: ", feed16)
                                             if feed16:
                                                 pg.move(152, 88, r, pg.easeOutQuad)
+                                            else:
+                                                raise ErrorFeed()
 
                                         except:
                                             pg.move(107, 88 , r, pg.easeOutQuad)
