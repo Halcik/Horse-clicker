@@ -49,7 +49,12 @@ def h_feed( r, v):
                         if feed10:
                             pg.move(85, 88, r, pg.easeOutQuad)
                         else:
-                            raise ErrorFeed()
+                            feed10 = pg.locateCenterOnScreen('Image\Feed10_2.jpg', confidence=0.9)
+                            print("10_2: ", feed10)
+                            if feed10:
+                                pg.move(85, 88, r, pg.easeOutQuad)
+                            else:
+                                raise ErrorFeed()
 
                     except ErrorFeed:
                         try:
@@ -58,7 +63,12 @@ def h_feed( r, v):
                             if feed8:
                                 pg.move(64, 88, r, pg.easeOutQuad)
                             else:
-                                raise ErrorFeed()
+                                feed8 = pg.locateCenterOnScreen('Image\Feed8_2.jpg', confidence=0.9)
+                                print("8_2: ", feed10)
+                                if feed8:
+                                    pg.move(64, 88, r, pg.easeOutQuad)
+                                else:
+                                    raise ErrorFeed()
 
                         except ErrorFeed:
                             try:
@@ -85,7 +95,12 @@ def h_feed( r, v):
                                         if feed6:
                                             pg.move(42, 88, r, pg.easeOutQuad)
                                         else:
-                                            raise ErrorFeed()
+                                            feed6 = pg.locateCenterOnScreen('Image\Feed6_2.jpg', confidence=0.9)
+                                            print("6_2: ", feed6)
+                                            if feed6:
+                                                pg.move(42, 88, r, pg.easeOutQuad)
+                                            else:
+                                                raise ErrorFeed()
 
                                     except ErrorFeed:
                                         try:
