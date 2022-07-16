@@ -1,5 +1,6 @@
 # Horse clicker
 Jest to projekt, który został stworzony, aby zaoszczędzić trochę czasu na nudnych czynnościach wykonywanych w grze howrse. Polega on na podstawowej opiece nad końmi, wykorzystując do tego rozpoznawanie elementów na ekranie.
+
 ## Spis treści
 1. Technologie.
 2. Funkcje programu.
@@ -35,11 +36,11 @@ Biblioteki użyte w programie:
  
  ## 5. Plany na rozwój projektu.
  Jest to projekt, który ciągle się rozwija. Mam do niego jeszcze sporo planów.
- Rzeczy, które planuję dodać lub poprawić:
-  - dodanie opcji wyłączenia komputera
-  - znalezienie innego sposobu na karmienie koni bez konta VIP
-  - dodanie opcji pokrycia klaczy
+ Rzeczy, które planuję dodać lub poprawić w najbliższych miesiącach:
   - dodanie opcji odbierania porodów
-  - stworzenie strony działającej tylko na localhost, która ułatwiłaby obsługę programu (flask + formularze - wygodniejsze wybieranie początkowych ustawień)
+  - dodanie opcji wyłączenia komputera
+  - dodanie opcji pokrycia klaczy 
+  - udoskonalanie karmienia bez specjalnego konta VIP
+  - stworzenie strony działającej tylko na lokalnym komputerze, która ułatwiłaby obsługę programu (planowane połączenie flaska i formularzy). Służyłoby to do wybierania początkowej konfiguracji w programie.
  
  
