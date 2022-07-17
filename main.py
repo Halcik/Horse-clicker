@@ -17,8 +17,8 @@ pg.PAUSE = 0.3
 n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
 v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
 func_sleep = input("Czy mam kłaść spać? [y/n]\n")
-print("Zaczynam")
 multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
+print("Zaczynam")
 #print("Zacznę oporządzać konie za 10 sekund.")
 #time.sleep(10)
 for i in range(n):
