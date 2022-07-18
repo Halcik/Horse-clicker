@@ -17,7 +17,7 @@ pg.PAUSE = 0.3
 n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
 v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
 func_sleep = input("Czy mam kłaść spać? [y/n]\n")
-multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
+# multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
 print("Zaczynam")
 #print("Zacznę oporządzać konie za 10 sekund.")
 #time.sleep(10)
@@ -35,26 +35,26 @@ for i in range(n):
             h_sleep( r)
 
         #test rozmnażania
-        if multiplication == "y" or multiplication == "Y":
-            reproduce_check = pg.locateCenterOnScreen('Image/mating_mares.JPG', confidence=0.9)
-            if reproduce_check:
-                pg.moveTo(reproduce_check.x, reproduce_check.y, r, pg.easeOutQuad)
-                pg.click()
-                time.sleep(3)
-                price_repro = pg.locateCenterOnScreen('Image/price_repro.jpg', confidence=0.8)
-                if price_repro:
-                    pg.moveTo(price_repro.x, price_repro.y, r, pg.easeOutQuad)
-                    pg.click()
-                    time.sleep(1)
+        # if multiplication == "y" or multiplication == "Y":
+        #     reproduce_check = pg.locateCenterOnScreen('Image/mating_mares.JPG', confidence=0.9)
+        #     if reproduce_check:
+        #         pg.moveTo(reproduce_check.x, reproduce_check.y, r, pg.easeOutQuad)
+        #         pg.click()
+        #         time.sleep(3)
+        #         price_repro = pg.locateCenterOnScreen('Image/price_repro.jpg', confidence=0.8)
+        #         if price_repro:
+        #             pg.moveTo(price_repro.x, price_repro.y, r, pg.easeOutQuad)
+        #             pg.click()
+        #             time.sleep(1)
 
-                    select_horse = pg.locateCenterOnScreen('Image/select_horse.jpg', confidence=0.8)
-                    pg.moveTo(select_horse.x, select_horse.y, r, pg.easeOutQuad)
-                    pg.click()
-                    time.sleep(2)
+        #             select_horse = pg.locateCenterOnScreen('Image/select_horse.jpg', confidence=0.8)
+        #             pg.moveTo(select_horse.x, select_horse.y, r, pg.easeOutQuad)
+        #             pg.click()
+        #             time.sleep(2)
 
-                    mating = pg.locateCenterOnScreen('Image/mating.jpg', confidence=0.8)
-                    pg.moveTo(mating.x, mating.y, r, pg.easeOutQuad)
-                    pg.click()
+        #             mating = pg.locateCenterOnScreen('Image/mating.jpg', confidence=0.8)
+        #             pg.moveTo(mating.x, mating.y, r, pg.easeOutQuad)
+        #             pg.click()
         #koniec testu
 
         death( r)

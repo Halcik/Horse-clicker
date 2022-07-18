@@ -22,7 +22,7 @@ def h_registration2(r):
         pg.moveTo(box.x, box.y, r, pg.easeOutQuad)
         pg.click()
         time.sleep(3)
-        pd = pg.locateCenterOnScreen('Image/PD.jpg', confidence=0.9)
+        pd = pg.locateCenterOnScreen('Image/PD.JPG', confidence=0.9)
 
         if pd == None:
             print("Wystąpił błąd rejestrowania")
@@ -30,12 +30,12 @@ def h_registration2(r):
             time.sleep(2.0)
             h_registration2( r)
     else:
-        r_days = pg.locateCenterOnScreen('Image/Days.jpg', confidence=0.9)
+        r_days = pg.locateCenterOnScreen('Image/Days.JPG', confidence=0.9)
 
         if r_days:
             pg.moveTo(r_days.x, r_days.y, r, pg.easeOutQuad)
             pg.click()
             time.sleep(3)
-            r_price = pg.locateCenterOnScreen('Image/Price.jpg', confidence=0.9, grayscale=False)
+            r_price = pg.locateCenterOnScreen('Image/Price.JPG', confidence=0.9, grayscale=False)
             pg.moveTo(r_price.x, r_price.y, r, pg.easeOutQuad)
             pg.click()
