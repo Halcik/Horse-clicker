@@ -40,7 +40,12 @@ def h_feed( r, v):
                     if feed12:
                         pg.move(107, 88 , r, pg.easeOutQuad)
                     else:
-                        raise ErrorFeed()
+                        feed12 = pg.locateCenterOnScreen('Image\Feed12_2.jpg', confidence=0.9)
+                        print("12_2: ", feed12)
+                        if feed12:
+                            pg.move(107, 88 , r, pg.easeOutQuad)
+                        else:
+                            raise ErrorFeed()
 
                 except ErrorFeed:
                     try:
