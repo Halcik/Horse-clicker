@@ -7,6 +7,7 @@ def death( r):
     if death:
         pg.moveTo(death.x, death.y, r, pg.easeOutQuad)
         pg.click()
-        h_arrow = pg.locateCenterOnScreen('Image\Arrowb.jpg', confidence=0.9)
-        pg.moveTo(h_arrow.x, h_arrow.y, r, pg.easeOutQuad)
+        pg.hotkey('Alt', 'left')
         pg.click()
+
+
