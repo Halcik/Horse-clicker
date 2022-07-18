@@ -14,6 +14,8 @@ Język programowania użyty w programie:
  
 Biblioteki użyte w programie:
  - pyautogui
+ - opencv-python
+ - pillow
  - time
  - random
  - os
