@@ -2,7 +2,7 @@
 import pyautogui as pg
 
 def death( r):
-    death = pg.locateCenterOnScreen('Image\death.jpg', confidence=0.9)
+    death = pg.locateCenterOnScreen('Image/death.jpg', confidence=0.9)
 
     if death:
         pg.moveTo(death.x, death.y, r, pg.easeOutQuad)
