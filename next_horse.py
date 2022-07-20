@@ -30,7 +30,12 @@ def h_next( r):
                         pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
                         pg.click()
                     else:
-                        print("Wystąpił błąd z przechodzeniem do następnego konia")
-                        pg.press('f5')
-                        time.sleep(1.5)
-                        pg.click()
+                        n_horse = pg.locateCenterOnScreen('Image/Arrow6.JPG', confidence=0.9)
+                        if n_horse:
+                            pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
+                            pg.click()
+                        else:
+                            print("Wystąpił błąd z przechodzeniem do następnego konia")
+                            pg.press('f5')
+                            time.sleep(1.5)
+                            pg.click()
