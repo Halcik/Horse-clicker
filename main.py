@@ -60,4 +60,4 @@ for i in range(n):
         death( r)
     print("Postęp:", i+1, "/", n)
     h_next( r)
-#os.system('shutdown /s') #wyłącza kompa
+os.system('shutdown /s') #wyłącza kompa
