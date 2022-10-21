@@ -17,6 +17,7 @@ pg.PAUSE = 0.3
 n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
 v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
 func_sleep = input("Czy mam kłaść spać? [y/n]\n")
+shutdown = input("Czy wyłączyć komputer? [y/n]\n")
 # multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
 print("Zaczynam")
 #print("Zacznę oporządzać konie za 10 sekund.")
@@ -60,4 +61,5 @@ for i in range(n):
         death( r)
     print("Postęp:", i+1, "/", n)
     h_next( r)
-#os.system('shutdown /s') #wyłącza kompa
+if shutdown=="Y" or shutdown=='y':
+    os.system('shutdown /s') #wyłącza kompa
