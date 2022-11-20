@@ -7,7 +7,7 @@ from registration import h_registration
 from groom_functions import h_groom, h_sleep
 from next_horse import h_next
 from death import death
-from multiplication import h_multiplication
+from multiplication import h_multiplication, h_birth
 
 import os
 
@@ -24,7 +24,9 @@ for i in range(n):
     random.seed(a=None, version=2)
     r = random.uniform(0.1, 0.5)
     for j in range(2):
-        time.sleep(1)
+        print(j)
+        time.sleep(1.5)
+        h_birth( r, j)
         #zwykłe oporządzenie
         h_registration( r)
         h_feed( r, v)
