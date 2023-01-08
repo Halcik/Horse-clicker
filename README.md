@@ -19,6 +19,9 @@ Biblioteki użyte w programie:
  - time
  - random
  - os
+ - pytesseract
+ - tesseract
+ - tesseract-ocr
  
  ## 2. Funkcje programu.
  Program ma przede wszystkim za zadanie wykonać kilka podstawowych czynności związanych z zajmowaniem się końmi.

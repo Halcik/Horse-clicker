@@ -42,5 +42,5 @@ def h_birth( r, j):
             pg.hotkey('Alt', 'left')
             pg.hotkey('Alt', 'left')
             time.sleep(2)
-        elif j==0:
+        elif j==1:
             pass
