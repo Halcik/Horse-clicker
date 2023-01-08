@@ -29,17 +29,21 @@ for i in range(n):
     for j in range(2):
         #print(j)
         time.sleep(1.5)
-        h_birth( r, j)
-        #zwykłe oporządzenie
-        h_registration( r)
-        h_feed( r, v)
-        time.sleep(0.1)
-        h_groom( r)
-        if func_sleep == "y" or func_sleep == "Y":
-            h_sleep( r)
-        death( r)
-        if multiplication == "y" or multiplication == "Y":
-            h_multiplication( r)
+        done_h = pg.locateCenterOnScreen('Image/done.JPG', confidence=0.9)
+        if done_h:
+            break
+        else:
+            h_birth( r, j)
+            #zwykłe oporządzenie
+            h_registration( r)
+            h_feed( r, v)
+            time.sleep(0.1)
+            h_groom( r)
+            if func_sleep == "y" or func_sleep == "Y":
+                h_sleep( r)
+            death( r)
+            if multiplication == "y" or multiplication == "Y":
+                h_multiplication( r)
     print("Postęp:", i+1, "/", n)
     h_next( r)
 end = datetime.today()
