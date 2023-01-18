@@ -29,8 +29,13 @@ for i in range(n):
     for j in range(2):
         #print(j)
         time.sleep(1.5)
+        #if j==0:
+            #new_horse = pg.locateCenterOnScreen('Image/new_horse.JPG', confidence=0.9)
+            #while new_horse== None:
+                #time.sleep(0.1)
+                #new_horse = pg.locateCenterOnScreen('Image/new_horse.JPG', confidence=0.9)
         done_h = pg.locateCenterOnScreen('Image/done.JPG', confidence=0.9)
-        if done_h:
+        if done_h and j==1:
             break
         else:
             h_birth( r, j)

@@ -9,19 +9,25 @@ def h_multiplication( r):
        pg.click()
        time.sleep(3)
        price_repro = pg.locateCenterOnScreen('Image/price_repro.JPG', confidence=0.8)
+       while price_repro == None:
+           price_repro = pg.locateCenterOnScreen('Image/price_repro.JPG', confidence=0.8)
        if price_repro:
-              pg.moveTo(price_repro.x, price_repro.y, r, pg.easeOutQuad)
-              pg.click()
-              time.sleep(1)
+            pg.moveTo(price_repro.x, price_repro.y, r, pg.easeOutQuad)
+            pg.click()
+            time.sleep(1)
 
-              select_horse = pg.locateCenterOnScreen('Image/select_horse.JPG', confidence=0.8)
-              pg.moveTo(select_horse.x, select_horse.y, r, pg.easeOutQuad)
-              pg.click()
-              time.sleep(2)
+            select_horse = pg.locateCenterOnScreen('Image/select_horse.JPG', confidence=0.8)
+            while select_horse == None:
+                select_horse = pg.locateCenterOnScreen('Image/select_horse.JPG', confidence=0.8)
+            pg.moveTo(select_horse.x, select_horse.y, r, pg.easeOutQuad)
+            pg.click()
+            time.sleep(2)
 
-              mating = pg.locateCenterOnScreen('Image/mating.JPG', confidence=0.8)
-              pg.moveTo(mating.x, mating.y, r, pg.easeOutQuad)
-              pg.click()
+            mating = pg.locateCenterOnScreen('Image/mating.JPG', confidence=0.8)
+            while mating == None:
+                mating = pg.locateCenterOnScreen('Image/mating.JPG', confidence=0.8)
+            pg.moveTo(mating.x, mating.y, r, pg.easeOutQuad)
+            pg.click()
 
 def h_birth( r, j):
     if j==0:
