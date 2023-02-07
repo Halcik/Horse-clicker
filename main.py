@@ -21,19 +21,16 @@ func_sleep = input("Czy mam kłaść spać? [y/n]\n")
 multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
 shutdown = input("Czy wyłączyć komputer? [y/n]\n")
 
+pd_rest = random.randrange(1, n)
 beg = datetime.today()
 for i in range(n):
+    if i==pd_rest:
+        time.sleep(30)
     #randomizacja czasu trwania przesunięcia myszki
     random.seed(a=None, version=2)
     r = random.uniform(0.1, 0.5)
     for j in range(2):
-        #print(j)
         time.sleep(1.5)
-        #if j==0:
-            #new_horse = pg.locateCenterOnScreen('Image/new_horse.JPG', confidence=0.9)
-            #while new_horse== None:
-                #time.sleep(0.1)
-                #new_horse = pg.locateCenterOnScreen('Image/new_horse.JPG', confidence=0.9)
         done_h = pg.locateCenterOnScreen('Image/done.JPG', confidence=0.9)
         if done_h and j==1:
             break
