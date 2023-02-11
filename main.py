@@ -12,6 +12,14 @@ from multiplication import h_multiplication, h_birth
 import os
 from datetime import timedelta, datetime
 
+def cancel_reg(r):
+    time.sleep(1.5)
+    cancel= pg.locateCenterOnScreen('Image/cancel.JPG', confidence=0.85)
+    if cancel:
+        pg.moveTo(cancel.x, cancel.y, r, pg.easeOutQuad)
+        pg.click()
+        pg.press('enter')
+
 #Przerwa po kazdym wywolaniu pyautogui - tu 0,3 sekundy
 pg.PAUSE = 0.3
 
@@ -35,9 +43,11 @@ for i in range(n):
         if done_h and j==1:
             break
         else:
+            #cancel_reg( r)
             h_birth( r, j)
             #zwykłe oporządzenie
             h_registration( r)
+            h_feed( r, v)
             h_feed( r, v)
             time.sleep(0.1)
             h_groom( r)
