@@ -33,7 +33,8 @@ Biblioteki użyte w programie:
  Oprócz podstawowych funkcji wymienionych wyżej, Horse clicker może wrócić do oporządzania po śmierci jednego z koni. Oprócz tego na początku można wybrać parę opcji, które odpowiadają za to, jak program ma dokładnie działać - są to: ilość koni do oporządzenia, posiadanie konta VIP - jest to uprzywilejowane konto w tej grze - oraz czy chcemy, by konie były kładzone spać (jest to związane z tym, że niektórzy gracze posiadają specjalnego konia, który kładzie spać konie po oporządzeniu go, wtedy funkcja sleep nie jest już potrzebna.
  
  ## 3. Przykład działania programu.
- gif?
+ ![horse-clicker](https://github.com/Halcik/Horse-clicker/assets/45713520/57793092-19f2-4d60-9e52-303ff0fb7a55)
+
  
  ## 4. Czym jest howrse?
  Howrse to jedna z wielu gier, które są dostępne dla milionów graczy w Internecie. Jest to gra przeglądarkowa, która polega na opiece nad własnymi końmi, prowadzeniu ośrodka jeździeckiego oraz rozwijaniu ras koni.
