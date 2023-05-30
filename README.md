@@ -22,6 +22,7 @@ Biblioteki użyte w programie:
  - pytesseract
  - tesseract
  - tesseract-ocr
+ - datetime
  
  ## 2. Funkcje programu.
  Program ma przede wszystkim za zadanie wykonać kilka podstawowych czynności związanych z zajmowaniem się końmi.
@@ -32,7 +33,7 @@ Biblioteki użyte w programie:
  Oprócz podstawowych funkcji wymienionych wyżej, Horse clicker może wrócić do oporządzania po śmierci jednego z koni. Oprócz tego na początku można wybrać parę opcji, które odpowiadają za to, jak program ma dokładnie działać - są to: ilość koni do oporządzenia, posiadanie konta VIP - jest to uprzywilejowane konto w tej grze - oraz czy chcemy, by konie były kładzone spać (jest to związane z tym, że niektórzy gracze posiadają specjalnego konia, który kładzie spać konie po oporządzeniu go, wtedy funkcja sleep nie jest już potrzebna.
  
  ## 3. Przykład działania programu.
- Tu kiedyś będzie gif z tego, jak działa.
+ gif?
  
  ## 4. Czym jest howrse?
  Howrse to jedna z wielu gier, które są dostępne dla milionów graczy w Internecie. Jest to gra przeglądarkowa, która polega na opiece nad własnymi końmi, prowadzeniu ośrodka jeździeckiego oraz rozwijaniu ras koni.
@@ -42,7 +43,7 @@ Biblioteki użyte w programie:
  ## 5. Plany na rozwój projektu.
  Jest to projekt, który ciągle się rozwija. Mam do niego jeszcze sporo planów.
  Rzeczy, które planuję dodać lub poprawić w najbliższych miesiącach:
-  - dodanie opcji odbierania porodów
+  - wgrywanie zdjęć przycisków w razie niezgodności
   - udoskonalanie karmienia bez specjalnego konta VIP
   - stworzenie strony działającej tylko na lokalnym komputerze, która ułatwiłaby obsługę programu (planowane połączenie flaska i formularzy). Służyłoby to do wybierania początkowej konfiguracji w programie.
  
