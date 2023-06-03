@@ -12,17 +12,19 @@ Jest to projekt, który został stworzony, aby zaoszczędzić trochę czasu na n
 Język programowania użyty w programie:
  - Python 3.10
  
-Biblioteki użyte w programie:
+Biblioteki i frameworki użyte w programie:
  - pyautogui
  - opencv-python
  - pillow
  - time
  - random
  - os
- - pytesseract
- - tesseract
- - tesseract-ocr
  - datetime
+ - flask (tylko test)
+ - pytesseract (tylko test)
+ - tesseract (tylko test)
+ - tesseract-ocr (tylko test)
+ 
  
  ## 2. Funkcje programu.
  Program ma przede wszystkim za zadanie wykonać kilka podstawowych czynności związanych z zajmowaniem się końmi.

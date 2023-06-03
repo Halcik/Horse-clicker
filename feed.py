@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
 import pyautogui as pg
+import random
 
 def h_feed( r, v):
-    feeding = pg.locateCenterOnScreen('Image/Feed.JPG', confidence=0.9)
-    care = pg.locateCenterOnScreen('Image/Care.JPG', confidence=0.9)
+    feeding = pg.locateOnScreen('Image/Feed.JPG', confidence=0.9)
+    care = pg.locateOnScreen('Image/Care.JPG', confidence=0.9)
 
     if feeding:
-        pg.moveTo(feeding.x, feeding.y, r, pg.easeOutQuad)
-        #print(feeding.x, feeding.y)
+        left, top, right, down = feeding[0], feeding[1], feeding[0]+feeding[2], feeding[1]+feeding[3]
+        pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
         pg.click()
 
     elif care:
-        pg.moveTo(care.x, care.y, r, pg.easeOutQuad)
+        left, top, right, down = care[0], care[1], care[0]+care[2], care[1]+care[3]
+        pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
         pg.click()
     
-    if v != 1 and care == None and feeding:
+    if v != 1 and care == None and feeding: #tego na razie nie ruszam D: another time
         try:
             feed0 = pg.locateCenterOnScreen('Image/Feed0.JPG', confidence=0.93)
             print("0: ", feed0)
@@ -123,10 +125,10 @@ def h_feed( r, v):
         finally:
             pg.click()
 
-    feed_it = pg.locateCenterOnScreen('Image/Feeding.JPG', confidence=0.8)
-
+    feed_it = pg.locateOnScreen('Image/Feeding.JPG', confidence=0.8)
     if(feed_it != None):
-        pg.moveTo(feed_it.x, feed_it.y, r, pg.easeOutQuad)
+        left, top, right, down = feed_it[0], feed_it[1], feed_it[0]+feed_it[2], feed_it[1]+feed_it[3]
+        pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
         pg.click()
 
 

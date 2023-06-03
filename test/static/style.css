@@ -1,0 +1,25 @@
+* {
+    font-size: 20px;
+}
+body {
+    background-color: rgb(207, 195, 173);
+}
+
+#konie {
+    margin-left: 5px;
+    width: 100px;
+}
+
+#opcje {
+    border: 7px dotted rgb(182, 126, 21);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(201, 174, 126);
+    width: max-content;
+}
+
+td, th {
+    padding-left: 10px;
+    padding-right: 10px;
+}
