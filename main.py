@@ -12,6 +12,7 @@ from multiplication import h_multiplication, h_birth
 import os
 from datetime import timedelta, datetime
 
+
 #Przerwa po kazdym wywolaniu pyautogui - tu 0,3 sekundy
 pg.PAUSE = 0.3
 
@@ -22,8 +23,11 @@ multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
 reg = input("Czy rejestrować konie w ojku? [y/n]\n")
 shutdown = input("Czy wyłączyć komputer? [y/n]\n")
 
-
-pd_rest = random.randrange(1, n)
+if n>1:
+    pd_rest = random.randrange(1, n)
+else:
+    pd_rest = -1
+    
 beg = datetime.today()
 for i in range(n):
     if i==pd_rest:

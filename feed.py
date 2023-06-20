@@ -128,7 +128,7 @@ def h_feed( r, v):
     feed_it = pg.locateOnScreen('Image/Feeding.JPG', confidence=0.8)
     if(feed_it != None):
         left, top, right, down = feed_it[0], feed_it[1], feed_it[0]+feed_it[2], feed_it[1]+feed_it[3]
-        pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
+        pg.moveTo(random.uniform(left+2, right-2), random.uniform(top-2, down+2), r, pg.easeOutQuad)
         pg.click()
 
 
