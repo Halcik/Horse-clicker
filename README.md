@@ -19,6 +19,7 @@ Biblioteki i frameworki użyte w programie:
  - time
  - random
  - os
+ - sys
  - datetime
  - pyshortcuts
  - flask (tylko test)

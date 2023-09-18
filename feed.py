@@ -1,15 +1,27 @@
 # -*- coding: utf-8 -*-
 import pyautogui as pg
 import random
+import time
 
 def h_feed( r, v):
     feeding = pg.locateOnScreen('Image/Feed.JPG', confidence=0.9)
     care = pg.locateOnScreen('Image/Care.JPG', confidence=0.9)
 
     if feeding:
-        left, top, right, down = feeding[0], feeding[1], feeding[0]+feeding[2], feeding[1]+feeding[3]
-        pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
-        pg.click()
+        feeded = pg.locateOnScreen('Image/feeded.JPG', confidence=0.9)
+        while feeded is None:
+            if feeding:
+                left, top, right, down = feeding[0], feeding[1], feeding[0]+feeding[2], feeding[1]+feeding[3]
+                pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
+                pg.click()
+            feed_it = pg.locateOnScreen('Image/Feeding.JPG', confidence=0.8)
+            if(feed_it != None):
+                left, top, right, down = feed_it[0], feed_it[1], feed_it[0]+feed_it[2], feed_it[1]+feed_it[3]
+                pg.moveTo(random.uniform(left+2, right-2), random.uniform(top-2, down+2), r, pg.easeOutQuad)
+                pg.click()
+            time.sleep(0.3)
+            feeding = pg.locateOnScreen('Image/Feed.JPG', confidence=0.9)
+            feeded = pg.locateOnScreen('Image/feeded.JPG', confidence=0.9)
 
     elif care:
         left, top, right, down = care[0], care[1], care[0]+care[2], care[1]+care[3]
@@ -124,12 +136,13 @@ def h_feed( r, v):
 
         finally:
             pg.click()
+            feed_it = pg.locateOnScreen('Image/Feeding.JPG', confidence=0.8)
+            if(feed_it != None):
+                left, top, right, down = feed_it[0], feed_it[1], feed_it[0]+feed_it[2], feed_it[1]+feed_it[3]
+                pg.moveTo(random.uniform(left+2, right-2), random.uniform(top-2, down+2), r, pg.easeOutQuad)
+                pg.click()
 
-    feed_it = pg.locateOnScreen('Image/Feeding.JPG', confidence=0.8)
-    if(feed_it != None):
-        left, top, right, down = feed_it[0], feed_it[1], feed_it[0]+feed_it[2], feed_it[1]+feed_it[3]
-        pg.moveTo(random.uniform(left+2, right-2), random.uniform(top-2, down+2), r, pg.easeOutQuad)
-        pg.click()
+
 
 
 class ErrorFeed(Exception):
