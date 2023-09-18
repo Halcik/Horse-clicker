@@ -20,6 +20,7 @@ Biblioteki i frameworki użyte w programie:
  - random
  - os
  - datetime
+ - pyshortcuts
  - flask (tylko test)
  - pytesseract (tylko test)
  - tesseract (tylko test)
