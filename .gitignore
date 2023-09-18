@@ -7,9 +7,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-#my files
-account_setting.txt
-
 # C extensions
 *.so
 
