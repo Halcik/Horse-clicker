@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from main import start_sitter
+import sys
 
 app = Flask(__name__)
 
@@ -16,7 +17,9 @@ def main():
         func_sleep = request.form['sleep']
         multiplication = request.form['multiplication']
         shutdown = request.form['shutdown']
-        start_sitter(n, v, func_sleep, multiplication, reg, shutdown)
+        path_project = sys.argv[0][:-7]
+        print(path_project)
+        start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project)
 
     return render_template('index.html')
 

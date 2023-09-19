@@ -1,36 +1,37 @@
 # -*- coding: utf-8 -*-
 import pyautogui as pg
 import time
+import os
 
-def h_next( r):
-    n_horse = pg.locateCenterOnScreen('Image/Arrow.jpg', confidence=0.9)
+def h_next( r, path_project):
+    n_horse = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'Arrow.jpg'), confidence=0.9)
     
     if n_horse:
         pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
         pg.click()
     
     else:
-        n_horse = pg.locateCenterOnScreen('Image/Arrow2.JPG', confidence=0.9)
+        n_horse = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'Arrow2.JPG'), confidence=0.9)
         if n_horse:
             pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
             pg.click()
         else:
-            n_horse = pg.locateCenterOnScreen('Image/Arrow4.JPG', confidence=0.9)
+            n_horse = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'Arrow4.JPG'), confidence=0.9)
             if n_horse:
                 pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
                 pg.click()
             else:
-                n_horse = pg.locateCenterOnScreen('Image/Arrow3.JPG', confidence=0.9)
+                n_horse = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'Arrow3.JPG'), confidence=0.9)
                 if n_horse:
                     pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
                     pg.click()
                 else:
-                    n_horse = pg.locateCenterOnScreen('Image/Arrow5.JPG', confidence=0.9)
+                    n_horse = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'Arrow5.JPG'), confidence=0.9)
                     if n_horse:
                         pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
                         pg.click()
                     else:
-                        n_horse = pg.locateCenterOnScreen('Image/Arrow6.JPG', confidence=0.9)
+                        n_horse = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'Arrow6.JPG'), confidence=0.9)
                         if n_horse:
                             pg.moveTo(n_horse.x, n_horse.y, r, pg.easeOutQuad)
                             pg.click()

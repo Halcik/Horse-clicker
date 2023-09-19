@@ -2,33 +2,34 @@
 import pyautogui as pg
 import random
 import time
+import os
 
-def h_feed( r, v):
-    feeding = pg.locateOnScreen('Image/Feed.JPG', confidence=0.9)
-    care = pg.locateOnScreen('Image/Care.JPG', confidence=0.9)
+def h_feed( r, v, path_project):
+    feeding = pg.locateOnScreen(os.path.join(path_project, 'Image', 'Feed.JPG'), confidence=0.9)
+    care = pg.locateOnScreen(os.path.join(path_project, 'Image', 'Care.JPG'), confidence=0.9)
 
     if feeding:
-        feeded = pg.locateOnScreen('Image/feeded.JPG', confidence=0.9)
+        feeded = pg.locateOnScreen(os.path.join(path_project, 'Image', 'feeded.JPG'), confidence=0.9)
         while feeded is None:
             if feeding:
                 left, top, right, down = feeding[0], feeding[1], feeding[0]+feeding[2], feeding[1]+feeding[3]
                 pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
                 pg.click()
-            feed_it = pg.locateOnScreen('Image/Feeding.JPG', confidence=0.8)
+            feed_it = pg.locateOnScreen(os.path.join(path_project, 'Image', 'Feeding.JPG'), confidence=0.8)
             if(feed_it != None):
                 left, top, right, down = feed_it[0], feed_it[1], feed_it[0]+feed_it[2], feed_it[1]+feed_it[3]
                 pg.moveTo(random.uniform(left+2, right-2), random.uniform(top-2, down+2), r, pg.easeOutQuad)
                 pg.click()
             time.sleep(0.3)
-            feeding = pg.locateOnScreen('Image/Feed.JPG', confidence=0.9)
-            feeded = pg.locateOnScreen('Image/feeded.JPG', confidence=0.9)
+            feeding = pg.locateOnScreen(os.path.join(path_project, 'Image', 'Feed.JPG'), confidence=0.9)
+            feeded = pg.locateOnScreen(os.path.join(path_project, 'Image', 'feeded.JPG'), confidence=0.9)
 
     elif care:
         left, top, right, down = care[0], care[1], care[0]+care[2], care[1]+care[3]
         pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
         pg.click()
     
-    if v != 1 and care == None and feeding: #tego na razie nie ruszam D: another time
+    if v != 1 and care == None and feeding: #tego na razie nie ruszam D: another time - I have to write it again
         try:
             feed0 = pg.locateCenterOnScreen('Image/Feed0.JPG', confidence=0.93)
             print("0: ", feed0)

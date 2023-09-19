@@ -13,7 +13,7 @@ import sys
 import os
 from datetime import datetime
 
-def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project=None):
+def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project):
     if n>10:
         pd_rest = random.randrange(1, n)
     else:
@@ -32,20 +32,20 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project=N
             if done_h and j==1:
                 break
             else:
-                #cancel_reg( r)
-                h_birth( r, j)
+                #cancel_reg( r, path_project)
+                h_birth( r, j, path_project)
                 #zwykłe oporządzenie
                 if reg == "y" or reg =="Y":
-                    h_registration( r)
-                h_feed( r, v)
-                h_groom( r)
+                    h_registration( r, path_project)
+                h_feed( r, v, path_project)
+                h_groom( r, path_project)
                 if func_sleep == "y" or func_sleep == "Y":
-                    h_sleep( r)
-                death( r)
+                    h_sleep( r, path_project)
+                death( r, path_project)
                 if multiplication == "y" or multiplication == "Y":
-                    h_multiplication( r)
+                    h_multiplication( r, path_project)
         print("Postęp:", i+1, "/", n)
-        h_next( r)
+        h_next( r, path_project)
     end = datetime.today()
     done = end-beg
     print(f"Czas wykonania sitterki {n} koni:", done)
@@ -54,8 +54,10 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project=N
 
 
 if __name__ == "__main__":
+    path_project = sys.argv[0][:-8]
+    print(path_project)
     pg.PAUSE = 0.3
-    file_a = open("account_setting.txt", "r")
+    file_a = open(os.path.join(path_project,"account_setting.txt"), "r")
     print("Zapisane ustawienia sitterki:")
     for line in file_a.readlines():
         try:
@@ -75,12 +77,12 @@ if __name__ == "__main__":
         want_save = input("Czy chcesz zapisać ustawienia? [y/n]\n")
         if want_save == "y":
             name_a = input("Podaj nazwę ustawienia:\n")
-            file_a = open("account_setting.txt", "a+")
+            file_a = open(os.path.join(path_project,"account_setting.txt"), "a+")
             file_a.write(f'{name_a}:{n} {v} {func_sleep} {multiplication} {reg} {shutdown}\n')
             file_a.read()
             file_a.close()
     else:
-        file_a = open("account_setting.txt", "r")
+        file_a = open(os.path.join(path_project,"account_setting.txt"), "r")
         for line in file_a.readlines():
             if choose_setting in line:
                 id_sett = line.index(":")
@@ -92,5 +94,5 @@ if __name__ == "__main__":
         multiplication = setting_account[3]
         reg = setting_account[4]
         shutdown = setting_account[5]
-    path_project = sys.argv[0][:-7]
+        file_a.close()
     start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project)
