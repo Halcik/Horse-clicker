@@ -1,0 +1,13 @@
+pyautogui
+opencv-python
+pillow
+time
+random
+os
+sys
+datetime
+pyshortcuts
+flask
+pytesseract
+tesseract
+tesseract-ocr

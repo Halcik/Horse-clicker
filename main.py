@@ -6,14 +6,14 @@ from feed import h_feed
 from registration import h_registration, cancel_reg
 from groom_functions import h_groom, h_sleep
 from next_horse import h_next
-from death import death
+from death import death, account_quiting
 from multiplication import h_multiplication, h_birth
 import sys
 
 import os
 from datetime import datetime
 
-def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project):
+def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game=None):
     if n>10:
         pd_rest = random.randrange(1, n)
     else:
@@ -49,6 +49,9 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project):
     end = datetime.today()
     done = end-beg
     print(f"Czas wykonania sitterki {n} koni:", done)
+    if quit_game:
+        account_quiting( r, path_project, quit_game)
+
     if shutdown=="Y" or shutdown=='y':
         os.system('shutdown /s') #wyłącza kompa
 
@@ -73,12 +76,13 @@ if __name__ == "__main__":
         func_sleep = input("Czy mam kłaść spać? [y/n]\n")
         multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
         reg = input("Czy rejestrować konie w ojku? [y/n]\n")
+        quit_game = input("Wyjście ze współki czy konta? [w/k/wk]\n")
         shutdown = input("Czy wyłączyć komputer? [y/n]\n")
         want_save = input("Czy chcesz zapisać ustawienia? [y/n]\n")
         if want_save == "y":
             name_a = input("Podaj nazwę ustawienia:\n")
             file_a = open(os.path.join(path_project,"account_setting.txt"), "a+")
-            file_a.write(f'{name_a}:{n} {v} {func_sleep} {multiplication} {reg} {shutdown}\n')
+            file_a.write(f'{name_a}:{n} {v} {func_sleep} {multiplication} {reg} {shutdown} {quit_game}\n')
             file_a.read()
             file_a.close()
     else:
@@ -94,5 +98,6 @@ if __name__ == "__main__":
         multiplication = setting_account[3]
         reg = setting_account[4]
         shutdown = setting_account[5]
+        quit_game = setting_account[6]
         file_a.close()
-    start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project)
+    start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game)
