@@ -1,5 +1,6 @@
 import pyautogui as pg
 import time, os, random
+import webbrowser
 
 #rejestracja do ojka
 def h_registration(r, path_project): # do naprawy też
@@ -98,7 +99,7 @@ def h_multiplication( r, path_project):
             pg.click()
 
 
-def account_quiting( r, path_project, quit_game): #this is temporary location for this function-  I must change place for every functions
+def account_quiting( r, path_project, quit_game):
     time.sleep(2)
     if "w" in quit_game: #wyjście ze współki
         share_account = pg.locateOnScreen(os.path.join(path_project, 'Image', 'account_share.JPG'), confidence=0.9)
@@ -130,3 +131,11 @@ def account_quiting( r, path_project, quit_game): #this is temporary location fo
                     left, top, right, down = agree[0], agree[1], agree[0]+agree[2], agree[1]+agree[3]
                     pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
                     pg.click()
+
+def notification(url):
+    webbrowser.register('msedge', None, webbrowser.BackgroundBrowser("C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"))
+    browser = webbrowser.get("msedge")
+    browser.open(url)
+    time.sleep(20)
+    pg.write("Zrobione [sitter]")
+    pg.press('enter')

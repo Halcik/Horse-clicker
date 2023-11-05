@@ -15,4 +15,5 @@ def locate_image(image, path_project, r):
         left, top, right, down = image_find[0], image_find[1], image_find[0]+image_find[2], image_find[1]+image_find[3]
         pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
         pg.click()
+        return 1
         

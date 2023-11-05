@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import pyautogui as pg
-import time, random, os, sys
+import random, os, sys
 from datetime import datetime
 
 from sample.basic_care import h_feed, h_groom, h_sleep, h_next
-from sample.additional_features import h_registration, h_multiplication, account_quiting, cancel_reg
+from sample.additional_features import h_registration, h_multiplication, account_quiting, notification, cancel_reg
 from sample.checking_functions import death, h_birth
 
 def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game=None):
@@ -16,12 +16,12 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, 
     beg = datetime.today()
     for i in range(n):
         if i==pd_rest:
-            time.sleep(30)
+            pg.sleep(30)
         #randomizacja czasu trwania przesunięcia myszki
         random.seed(a=None, version=2)
         r = random.uniform(0.1, 0.45)
         for j in range(2):
-            time.sleep(1.5)
+            pg.sleep(1.5)
             done_h = pg.locateCenterOnScreen(os.path.join(path_project, 'Image', 'done.JPG'), confidence=0.9)
             if done_h and j==1:
                 break
@@ -45,6 +45,7 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, 
     print(f"Czas wykonania sitterki {n} koni:", done)
     if quit_game:
         account_quiting( r, path_project, quit_game)
+    notification('https://www.facebook.com/messages/t/9278836405491721')
 
     if shutdown=="Y" or shutdown=='y':
         os.system('shutdown /s') #wyłącza kompa
