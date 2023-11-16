@@ -1,7 +1,6 @@
 pyautogui
 opencv-python
 pillow
-time
 random
 os
 sys

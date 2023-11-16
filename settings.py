@@ -3,7 +3,7 @@ import os
 from pyshortcuts import make_shortcut
 
 #necessary library
-os.system("pip install -r requirements.txt")
+#os.system("pip install -r requirements.txt")
 
 #shortcut on desktop
 whereIam= os.getcwd()

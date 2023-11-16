@@ -7,6 +7,9 @@ def locate_image_center(image, path_project, r):
     if image_find:
         pg.moveTo(image_find.x, image_find.y, r, pg.easeOutQuad)
         pg.click()
+        return 1
+    else:
+        return 0
         
 
 def locate_image(image, path_project, r):
@@ -16,4 +19,6 @@ def locate_image(image, path_project, r):
         pg.moveTo(random.uniform(left, right), random.uniform(top, down), r, pg.easeOutQuad)
         pg.click()
         return 1
+    else:
+        return 0
         

@@ -1,5 +1,5 @@
 import pyautogui as pg
-from helpful_things import locate_image
+from sample.helpful_things import locate_image
 
 def death( r, path_project):
     death = locate_image("death.JPG", path_project, r)
