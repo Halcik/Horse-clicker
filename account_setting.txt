@@ -1,2 +1,3 @@
 A:500 1 n n n n wk
 F:636 1 y n n n k
+T:100 1 y y y n w

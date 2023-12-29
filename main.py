@@ -43,9 +43,9 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, 
     end = datetime.today()
     done = end-beg
     print(f"Czas wykonania sitterki {n} koni:", done)
-    if quit_game:
-        account_quiting( r, path_project, quit_game)
-    notification('https://www.facebook.com/messages/t/9278836405491721')
+    # if quit_game:
+    #     account_quiting( r, path_project, quit_game)
+    # notification('https://www.facebook.com/messages/t/9278836405491721')
 
     if shutdown=="Y" or shutdown=='y':
         os.system('shutdown /s') #wyłącza kompa
