@@ -43,56 +43,65 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, 
     end = datetime.today()
     done = end-beg
     print(f"Czas wykonania sitterki {n} koni:", done)
-    # if quit_game:
-    #     account_quiting( r, path_project, quit_game)
+    if quit_game:
+        account_quiting( r, path_project, quit_game)
     # notification('https://www.facebook.com/messages/t/9278836405491721')
 
     if shutdown=="Y" or shutdown=='y':
         os.system('shutdown /s') #wyłącza kompa
+        return 0
+    else:
+        return 1
 
 
 if __name__ == "__main__":
-    path_project = sys.argv[0][:-8]
-    print(path_project)
-    pg.PAUSE = 0.3
-    file_a = open(os.path.join(path_project,"account_setting.txt"), "r")
-    print("Zapisane ustawienia sitterki:")
-    for line in file_a.readlines():
-        try:
-            id_sett = line.index(":")
-            print(line[:id_sett])
-        except:
-            print("Brak ustawień")
-    choose_setting = input("Wpisz nazwę ustawienia lub [n], by przejść do ręcznego ustawienia programu:\n")
-    file_a.close()
-    if choose_setting=="n":
-        n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
-        v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
-        func_sleep = input("Czy mam kłaść spać? [y/n]\n")
-        multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
-        reg = input("Czy rejestrować konie w ojku? [y/n]\n")
-        quit_game = input("Wyjście ze współki czy konta? [w/k/wk]\n")
-        shutdown = input("Czy wyłączyć komputer? [y/n]\n")
-        want_save = input("Czy chcesz zapisać ustawienia? [y/n]\n")
-        if want_save == "y":
-            name_a = input("Podaj nazwę ustawienia:\n")
-            file_a = open(os.path.join(path_project,"account_setting.txt"), "a+")
-            file_a.write(f'{name_a}:{n} {v} {func_sleep} {multiplication} {reg} {shutdown} {quit_game}\n')
-            file_a.read()
-            file_a.close()
-    else:
+    while True:
+        path_project = sys.argv[0][:-8]
+        print(path_project)
+        pg.PAUSE = 0.3
         file_a = open(os.path.join(path_project,"account_setting.txt"), "r")
+        print("Zapisane ustawienia sitterki:")
         for line in file_a.readlines():
-            if choose_setting in line:
+            try:
                 id_sett = line.index(":")
-                setting_account = line[id_sett+1:]
-                setting_account = setting_account.split()
-        n = int(setting_account[0])
-        v = int(setting_account[1])
-        func_sleep = setting_account[2]
-        multiplication = setting_account[3]
-        reg = setting_account[4]
-        shutdown = setting_account[5]
-        quit_game = setting_account[6]
+                print(line[:id_sett])
+            except:
+                print("Brak ustawień")
+        choose_setting = input("Wpisz nazwę ustawienia lub [n], by przejść do ręcznego ustawienia programu lub [k], aby zakończyć:\n")
         file_a.close()
-    start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game)
+        if choose_setting=="n":
+            n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
+            v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
+            func_sleep = input("Czy mam kłaść spać? [y/n]\n")
+            multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
+            reg = input("Czy rejestrować konie w ojku? [y/n]\n")
+            quit_game = input("Wyjście ze współki czy konta? [w/k/wk]\n")
+            shutdown = input("Czy wyłączyć komputer? [y/n]\n")
+            want_save = input("Czy chcesz zapisać ustawienia? [y/n]\n")
+            if want_save == "y":
+                name_a = input("Podaj nazwę ustawienia:\n")
+                file_a = open(os.path.join(path_project,"account_setting.txt"), "a+")
+                file_a.write(f'{name_a}:{n} {v} {func_sleep} {multiplication} {reg} {shutdown} {quit_game}\n')
+                file_a.read()
+                file_a.close()
+        elif choose_setting=="k":
+            break
+        else:
+            file_a = open(os.path.join(path_project,"account_setting.txt"), "r")
+            for line in file_a.readlines():
+                if choose_setting in line:
+                    id_sett = line.index(":")
+                    setting_account = line[id_sett+1:]
+                    setting_account = setting_account.split()
+                    break
+            n = int(setting_account[0])
+            v = int(setting_account[1])
+            func_sleep = setting_account[2]
+            multiplication = setting_account[3]
+            reg = setting_account[4]
+            shutdown = setting_account[5]
+            quit_game = setting_account[6]
+            file_a.close()
+        account = start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game)
+        if not account:
+            break
