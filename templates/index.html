@@ -1,53 +1,67 @@
 <html>
-    <head>
-        <title>Horse-clicker</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-    </head>
-    <body>
-        <div></div> <!-- info o projekcie -->
+<head>
+    <title>Horse-clicker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-        <div id="opcje">
-            <form action="/" method="post">
-                <table>
-                    <tr>
-                        <th colspan="2">Opcje sitterowania</th>
-                    </tr>
-                    <tr>
-                        <td>Wpisz liczbę koni do oporządzenia:</td>
-                        <td><input type="number" name="konie" id="konie" min="1"></td>
-                    </tr>
-                    <tr>
-                        <td>Czy posiadasz vipa? [automat karmienia]</td>
-                        <td><input type="radio" name="vip" id="tak" value="1" CHECKED> Tak
-                        <input type="radio" name="vip" id="nie" value="2"> Nie</td>
-                    </tr>
-                    <tr>
-                        <td>Czy rejestrować konie w ojku?</td>
-                        <td><input type="radio" name="reg" id="tak" value="y" CHECKED> Tak
-                            <input type="radio" name="reg" id="nie" value="n"> Nie</td>
-                    </tr>
-                    <tr>
-                        <td>Czy kłaść spać?</td>
-                        <td><input type="radio" name="sleep" id="tak"  value="y" CHECKED> Tak
-                            <input type="radio" name="sleep" id="nie" value="n"> Nie</td>
-                    </tr>
-                    <tr>
-                        <td>Czy pokrywać klacze?</td>
-                        <td><input type="radio" name="multiplication" id="tak" value="y"> Tak
-                            <input type="radio" name="multiplication" id="nie" value="n" CHECKED> Nie</td>
-                    </tr>
-                    <tr>
-                        <td>Czy wyłączyć komputer po sitterce?</td>
-                        <td><input type="radio" name="shutdown" id="tak" value="y"> Tak
-                            <input type="radio" name="shutdown" id="nie" value="n" CHECKED> Nie</td>
-                    </tr>
-                    <tr>
-                        <th colspan="2"><br><input type="submit" value="Zacznij sitterkę" name="sitter"></th>
-                    </tr>
-                </table>
-            </form>
-        </div> <!-- formularz -->
+</head>
 
-    </body>
+<body>
+    <div></div> <!-- info o projekcie -->
+
+    <div id="opcje">
+        <form action="/" method="post">
+            <table>
+                <tr>
+                    <th colspan="2">Opcje sitterowania</th>
+                </tr>
+                <tr>
+                    <td>Wpisz liczbę koni do oporządzenia:</td>
+                    <td><input type="number" name="konie" id="konie" min="1"></td>
+                </tr>
+                <tr>
+                    <td>Czy posiadasz vipa? [automat karmienia]</td>
+                    <td><input type="radio" name="vip" id="tak" value="1" CHECKED> Tak
+                        <input type="radio" name="vip" id="nie" value="2"> Nie
+                    </td>
+                </tr>
+                <tr>
+                    <td>Czy karmić konie?</td>
+                    <td><input type="radio" name="feed" id="tak" value="y" CHECKED> Tak
+                        <input type="radio" name="feed" id="nie" value="n"> Nie
+                    </td>
+                </tr>
+                <tr>
+                    <td>Czy rejestrować konie w ojku?</td>
+                    <td><input type="radio" name="reg" id="tak" value="y" CHECKED> Tak
+                        <input type="radio" name="reg" id="nie" value="n"> Nie
+                    </td>
+                </tr>
+                <tr>
+                    <td>Czy kłaść spać?</td>
+                    <td><input type="radio" name="sleep" id="tak" value="y" CHECKED> Tak
+                        <input type="radio" name="sleep" id="nie" value="n"> Nie
+                    </td>
+                </tr>
+                <tr>
+                    <td>Czy pokrywać klacze?</td>
+                    <td><input type="radio" name="multiplication" id="tak" value="y"> Tak
+                        <input type="radio" name="multiplication" id="nie" value="n" CHECKED> Nie
+                    </td>
+                </tr>
+                <tr>
+                    <td>Czy wyłączyć komputer po sitterce?</td>
+                    <td><input type="radio" name="shutdown" id="tak" value="y"> Tak
+                        <input type="radio" name="shutdown" id="nie" value="n" CHECKED> Nie
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2"><br><input type="submit" value="Zacznij sitterkę" name="sitter"></th>
+                </tr>
+            </table>
+        </form>
+    </div> <!-- formularz -->
+
+</body>
+
 </html>

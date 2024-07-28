@@ -14,12 +14,13 @@ def main():
             n = 1
         v = int(request.form['vip'])
         reg = request.form['reg']
+        feed = request.form['feed']
         func_sleep = request.form['sleep']
         multiplication = request.form['multiplication']
         shutdown = request.form['shutdown']
         path_project = sys.argv[0][:-7]
         print(path_project)
-        start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project)
+        start_sitter(n, v, feed, func_sleep, multiplication, reg, shutdown, path_project)
 
     return render_template('index.html')
 

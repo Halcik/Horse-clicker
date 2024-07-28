@@ -23,9 +23,9 @@ def h_feed( r, v, path_project):
 
 #Oporządzenie
 def h_groom( r, path_project):
-    groom = locate_image('Groom.JPG', path_project, r, 0.9)
+    groom = locate_image('Groom.JPG', path_project, r, 0.95)
     if not groom:
-        groom2 = locate_image('Groom2.JPG', path_project, r, 0.9)
+        groom2 = locate_image('Groom2.JPG', path_project, r, 0.95)
 
 # Polozenie spac
 def h_sleep( r, path_project):

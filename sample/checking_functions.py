@@ -6,7 +6,7 @@ except:
     from helpful_things import locate_image
 
 def death( r, path_project):
-    death = locate_image("death.JPG", path_project, r, 0.9)
+    death = locate_image("death.JPG", path_project, r, 0.91)
     if death:
         pg.hotkey('Alt', 'left')
         pg.click()

@@ -7,7 +7,7 @@ from sample.basic_care import h_feed, h_groom, h_sleep, h_next
 from sample.additional_features import h_registration, h_multiplication, account_quiting, notification, cancel_reg
 from sample.checking_functions import death, h_birth
 
-def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game=None):
+def start_sitter(n, v, feed, func_sleep, multiplication, reg, shutdown, path_project, quit_game=None):
     if n>10:
         pd_rest = random.randrange(1, n)
     else:
@@ -31,7 +31,8 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, 
                 #zwykłe oporządzenie
                 if reg == "y" or reg =="Y":
                     h_registration( r, path_project)
-                h_feed( r, v, path_project)
+                if feed == "y" or feed =="Y":
+                    h_feed( r, v, path_project)
                 h_groom( r, path_project)
                 if func_sleep == "y" or func_sleep == "Y":
                     h_sleep( r, path_project)
@@ -45,7 +46,7 @@ def start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, 
     print(f"Czas wykonania sitterki {n} koni:", done)
     if quit_game:
         account_quiting( r, path_project, quit_game)
-    # notification('https://www.facebook.com/messages/t/9278836405491721')
+    # notification('https://www.facebook.com/messages/t/xyz')
 
     if shutdown=="Y" or shutdown=='y':
         os.system('shutdown /s') #wyłącza kompa
@@ -72,6 +73,7 @@ if __name__ == "__main__":
         if choose_setting=="n":
             n = int(input("Wpisz liczbę koni do oporządzenia:\n"))
             v = int(input("Czy posiadasz vipa?\n 1-Tak\n 2-Nie\n"))
+            feed = input("Czy karmić konie? [y/n]\n")
             func_sleep = input("Czy mam kłaść spać? [y/n]\n")
             multiplication = input("Czy chcesz pokryć klacze? [y/n]\n")
             reg = input("Czy rejestrować konie w ojku? [y/n]\n")
@@ -81,7 +83,7 @@ if __name__ == "__main__":
             if want_save == "y":
                 name_a = input("Podaj nazwę ustawienia:\n")
                 file_a = open(os.path.join(path_project,"account_setting.txt"), "a+")
-                file_a.write(f'{name_a}:{n} {v} {func_sleep} {multiplication} {reg} {shutdown} {quit_game}\n')
+                file_a.write(f'{name_a}:{n} {v} {feed} {func_sleep} {multiplication} {reg} {shutdown} {quit_game}\n')
                 file_a.read()
                 file_a.close()
         elif choose_setting=="k":
@@ -96,12 +98,13 @@ if __name__ == "__main__":
                     break
             n = int(setting_account[0])
             v = int(setting_account[1])
-            func_sleep = setting_account[2]
-            multiplication = setting_account[3]
-            reg = setting_account[4]
-            shutdown = setting_account[5]
-            quit_game = setting_account[6]
+            feed = setting_account[2]
+            func_sleep = setting_account[3]
+            multiplication = setting_account[4]
+            reg = setting_account[5]
+            shutdown = setting_account[6]
+            quit_game = setting_account[7]
             file_a.close()
-        account = start_sitter(n, v, func_sleep, multiplication, reg, shutdown, path_project, quit_game)
+        account = start_sitter(n, v, feed, func_sleep, multiplication, reg, shutdown, path_project, quit_game)
         if not account:
             break
