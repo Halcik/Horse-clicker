@@ -1,5 +1,4 @@
 import pyautogui as pg
-import time
 import pytesseract
 from PIL import Image
 

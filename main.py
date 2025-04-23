@@ -39,11 +39,11 @@ def start_sitter(n, v, feed, func_sleep, multiplication, reg, shutdown, path_pro
                 death( r, path_project)
                 if multiplication == "y" or multiplication == "Y":
                     h_multiplication( r, path_project)
-        print("Postęp:", i+1, "/", n)
+        print(f"\rPostęp: {i+1}/{n} ", end="")
         h_next( r, path_project)
     end = datetime.today()
     done = end-beg
-    print(f"Czas wykonania sitterki {n} koni:", done)
+    print(f"\nCzas wykonania sitterki {n} koni: {str(done).split('.')[0]}")
     if quit_game:
         account_quiting( r, path_project, quit_game)
     # notification('https://www.facebook.com/messages/t/xyz')
@@ -65,7 +65,7 @@ if __name__ == "__main__":
         for line in file_a.readlines():
             try:
                 id_sett = line.index(":")
-                print(line[:id_sett])
+                print(" -", line[:id_sett])
             except:
                 print("Brak ustawień")
         choose_setting = input("Wpisz nazwę ustawienia lub [n], by przejść do ręcznego ustawienia programu lub [k], aby zakończyć:\n")
@@ -83,7 +83,7 @@ if __name__ == "__main__":
             if want_save == "y":
                 name_a = input("Podaj nazwę ustawienia:\n")
                 file_a = open(os.path.join(path_project,"account_setting.txt"), "a+")
-                file_a.write(f'{name_a}:{n} {v} {feed} {func_sleep} {multiplication} {reg} {shutdown} {quit_game}\n')
+                file_a.write(f'{name_a}:{n} {v} {feed} {func_sleep} {multiplication} {reg} {shutdown} {quit_game if quit_game else "n"}\n')
                 file_a.read()
                 file_a.close()
         elif choose_setting=="k":

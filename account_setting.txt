@@ -1,3 +1,4 @@
 F:636 1 y y n n y k
 A:500 1 n n n n n w
 T:300 1 y n n n n w
+ptest:5 1 y y n n n n

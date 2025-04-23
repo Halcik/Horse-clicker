@@ -1,9 +1,11 @@
 #file with settings - soon - this is not testing yet
 import os
-from pyshortcuts import make_shortcut
 
 #necessary library
-#os.system("pip install -r requirements.txt")
+os.system("pip install -r requirements.txt")
+from pyshortcuts import make_shortcut
+
+
 
 #shortcut on desktop
 whereIam= os.getcwd()
